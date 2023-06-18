@@ -49,6 +49,8 @@ Tiny.Loader.run({
     console.log('all complete');
     // 这里执行应用的主场景，如：
     // app.run(new StartLayer());
+    // 设置帧率
+    Tiny.Application.FPS = 120;
     Tiny.app.run(new StartLayer());
   },
 });

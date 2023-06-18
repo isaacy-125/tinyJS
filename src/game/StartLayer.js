@@ -4,6 +4,16 @@ class StartLayer extends Tiny.Container {
     super();
     this.status = 'right';
     this.init();
+    this.secondSprite();
+  }
+  secondSprite() {
+    // 由于之前通过loader加载过 直接从cache中读出
+    var texture = Tiny.TextureCache['https://zos.alipayobjects.com/rmsportal/kkroUtIawGrWrqOLRmjq.jpg'];
+    var antSprite = new Tiny.Sprite(texture);
+    antSprite.setAnchor(0.5);
+    // 设置精灵相对画布的位置，此处设置居中
+    antSprite.setPosition(Tiny.WIN_SIZE.width / 2, Tiny.WIN_SIZE.height / 2);
+    this.addChild(antSprite);
   }
   init() {
     // 通过 fromImage 实例化精灵
