@@ -13,6 +13,8 @@ class StartLayer extends Tiny.Container {
     antSprite.setAnchor(0.5);
     // 设置精灵相对画布的位置，此处设置居中
     antSprite.setPosition(Tiny.WIN_SIZE.width / 2, Tiny.WIN_SIZE.height / 2);
+    // getBounds() 方法可以获取精灵的边界信息
+    // console.log(antSprite.getBounds());
     this.addChild(antSprite);
   }
   init() {
