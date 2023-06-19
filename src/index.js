@@ -67,6 +67,6 @@ Tiny.Loader.run({
     Tiny.SecondLayer = secondLayer;
     Tiny.ThirdLayer = thirdLayer;
     Tiny.FourthLayer = fourthLayer;
-    Tiny.app.run(fourthLayer);
+    Tiny.app.run(startLayer);
   },
 });
