@@ -5,6 +5,22 @@ class StartLayer extends Tiny.Container {
     this.status = 'right';
     this.init();
     this.secondSprite();
+    this.initText();
+  }
+  initText() {
+    var txt = new Tiny.Text('去场景2', {
+      fontFamily: 'Arial',
+      fontSize: 32,
+      fill: 'white',
+    });
+    txt.setAnchor(0.5, 0);
+    // 设置精灵相对画布的位置，此处设置居中
+    txt.setPosition(Tiny.WIN_SIZE.width / 2, 0);
+    txt.setEventEnabled(true);
+    txt.on('tap', () => {
+      Tiny.app.replaceScene(Tiny.SecondLayer, 'MoveInR');
+    });
+    this.addChild(txt);
   }
   secondSprite() {
     // 由于之前通过loader加载过 直接从cache中读出
@@ -32,7 +48,7 @@ class StartLayer extends Tiny.Container {
     sprite.setEventEnabled(true);
     // 绑定 tap 和 mouseup 事件
     sprite.on('tap', () => {
-      console.log(Tiny.app);
+      console.log(Tiny.app.stage);
       // 是否暂停
       if (Tiny.app.isPaused()) {
         // 恢复

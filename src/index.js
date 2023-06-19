@@ -1,4 +1,6 @@
 import StartLayer from './game/StartLayer';
+import SecondLayer from './game/SecondLayer';
+import ThirdLayer from './game/ThirdLayer';
 require('./css/index.less');
 
 Tiny.app = new Tiny.Application({
@@ -15,7 +17,7 @@ Tiny.app = new Tiny.Application({
   // renderType: Tiny.RENDERER_TYPE.CANVAS, // 强制使用 CANVAS 渲染
   renderOptions: {
     // 画布背景色
-    backgroundColor: 0xbbbbbb,
+    backgroundColor: 0x71d737,
     // antialias: true, // 抗锯齿
     // transparent: false, // canvas 不透明
     // clearBeforeRender: true, // 每次渲染之前都清空画布
@@ -32,6 +34,10 @@ const resources = [
   'https://zos.alipayobjects.com/rmsportal/HAacythTETlcsPxEePbk.webp',
   // '../assets/text.txt',
   'https://os.alipayobjects.com/rmsportal/atrIuwPurrBiNEyWNdQA.ogg',
+  'https://gw.alipayobjects.com/as/g/tiny/resources/1.0.0/images/hao/hao0.png',
+  'https://gw.alipayobjects.com/as/g/tiny/resources/1.0.0/images/hao/hao1.png',
+  'https://gw.alipayobjects.com/as/g/tiny/resources/1.0.0/images/hao/hao2.png',
+  'https://gw.alipayobjects.com/as/g/tiny/resources/1.0.0/images/hao/hao3.png',
 ];
 //执行加载
 Tiny.Loader.run({
@@ -51,6 +57,12 @@ Tiny.Loader.run({
     // app.run(new StartLayer());
     // 设置帧率
     Tiny.Application.FPS = 120;
-    Tiny.app.run(new StartLayer());
+    const startLayer = new StartLayer();
+    const secondLayer = new SecondLayer();
+    const thirdLayer = new ThirdLayer();
+    Tiny.StartLayer = startLayer;
+    Tiny.SecondLayer = secondLayer;
+    Tiny.ThirdLayer = thirdLayer;
+    Tiny.app.run(startLayer);
   },
 });
