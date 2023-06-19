@@ -11,6 +11,18 @@ class ThirdLayer extends Tiny.Container {
       fill: 'white',
     });
     this.addChild(txt);
+    var txt2 = new Tiny.Text('去场景4', {
+      fontFamily: 'Arial',
+      fontSize: 32,
+      fill: 'white',
+    });
+    txt2.setAnchor(0.5, 0);
+    txt2.setPositionX(Tiny.WIN_SIZE.width / 2);
+    txt2.setEventEnabled(true);
+    txt2.on('tap', () => {
+      Tiny.app.replaceScene(Tiny.FourthLayer, 'MoveInR');
+    });
+    this.addChild(txt2);
   }
   initAnimate() {
     var textures = [];

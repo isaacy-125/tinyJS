@@ -1,6 +1,7 @@
 import StartLayer from './game/StartLayer';
 import SecondLayer from './game/SecondLayer';
 import ThirdLayer from './game/ThirdLayer';
+import FourthLayer from './game/FourthLayer';
 require('./css/index.less');
 
 Tiny.app = new Tiny.Application({
@@ -60,9 +61,12 @@ Tiny.Loader.run({
     const startLayer = new StartLayer();
     const secondLayer = new SecondLayer();
     const thirdLayer = new ThirdLayer();
+    const fourthLayer = new FourthLayer();
+
     Tiny.StartLayer = startLayer;
     Tiny.SecondLayer = secondLayer;
     Tiny.ThirdLayer = thirdLayer;
-    Tiny.app.run(startLayer);
+    Tiny.FourthLayer = fourthLayer;
+    Tiny.app.run(fourthLayer);
   },
 });
